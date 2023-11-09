@@ -20,10 +20,23 @@ Team roles & development areas:
    해야할일과 진행중은 미완료시 다음 스프린트로 자동으로 이동된다.
 
    각 스토리 포인트를 부여 할 수 있어 주에 얼만큼에 시간을 할애하였는지 확인가능
+
+3. 역할 분담
+   스프레드 페이지: 정성현
+   메모 페이지: 이호윤
+   달력 페이지: 이규태
+
+4. 스케줄
+   11/10 ~ 11/16 화면 작업 
+   11/17 ~ 11/23 기능 작업
+   11/24 ~ 11/30 페이지 병합
+   12/01 ~ 12/07 발표 준비
    
-4. 메모 관리 뷰
+6. 메모 관리 뷰
 
    메모를 대분류로 나눌 수 있으며, 기본 메모와 같은 기능
 
 List of technologies required: HTML, CSS, JavaScript
-   
+
+##프로젝트 예시
+![image](https://github.com/swjsh19/Personal-Calendar-Management/assets/108661244/1688eaa5-072d-43f9-b755-07116a0d86cb)
