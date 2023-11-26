@@ -7,25 +7,18 @@
         <title>Main</title>
         <link rel="stylesheet" type="text/css" href="../../css/main.css">
         <script type="text/javascript" src="../../js/main.js"></script>
+        <script type="text/javascript" src="../../js/util.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
     </head>
     <body>
-        <div id="Container">
-            <div id="Header">
-                <h1>Main</h1>
-            </div>
-            <div id="Bottom">
-                <div class="ButtonContainer">                    
-                    <a class="ImageButton">
-                        <img src="../../assets/memo.png" class="Image"/>
-                    </a>
-                    <a class="ImageButton">
-                        <img src="../../assets/memo.png" class="Image"/>
-                    </a>
-                    <a class="ImageButton" href="../memo/index.html">
-                        <img src="../../assets/memo.png" class="Image"/>
-                    </a>
-                </div>
-            </div>
+        <div id="header">
         </div>
+        <div id="content-container">
+        </div>
+        <script>
+            $(function() {
+                $('#header').load('../component/header.html')
+            })
+        </script>
     </body>
 </html>

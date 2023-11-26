@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../css/header.css">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <title>Header</title>
+    </head>
+    <body>
+        <ul class="tabs">
+            <li class="tab-link current" data-tab="schedule">달력</li>
+            <li class="tab-link" data-tab="">스프린트</li>
+            <li class="tab-link" data-tab="memo">메모</li>
+        </ul>
+    <script>
+        $('ul.tabs li').click(function(){
+            var tab_id = $(this).attr('data-tab');
+            $('ul.tabs li').removeClass('current');
+            $(this).addClass('current');
+            $('#content-container').load('../' + tab_id +'/index.html')
+        });
+    </script>
+    </body>
+</html>
