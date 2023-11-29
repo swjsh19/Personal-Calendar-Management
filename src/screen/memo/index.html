@@ -7,30 +7,29 @@
         <link rel="stylesheet" type="text/css" href="../../css/memo.css">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script type="text/javascript" src="../../js/util.js"></script>
+        <script type="text/javascript" src="../../js/memo.js"></script>
         <title>Memo</title>
     </head>
     <body>
         <div class="container">
             <div class="side-conatiner">
                 <div class="side-content">
-                    side
+                    <div id="memo-list"></div>
                 </div>
             </div>
             <div class="memo-container">
                 <div class="memo-content">
                     <div class="memo-header">
-                        <button id="new-button">
-                            new
-                        </button>
-                        <button id="save-button">
-                            save
-                        </button>
-                        <button id="bold-button">
-                            bold
-                        </button>
+                        <img id="new-button" width="20" height="20" src="https://img.icons8.com/ios/50/new-by-copy--v1.png" alt="new-by-copy--v1"/>
+                        <img id="save-button" width="20" height="20" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABOklEQVR4nO2YTQ6CMBBGvxUeB9fK9fDnKLpz4wEk3kTc6BkcQ1ISbMACnQ5F5yVNICXTvsxQyACKogwlAbAHcAdAE42D2YcXuwkFqDFOvjKlCbTqmK8XCgGZ8eSQcW1UQiQF8DDXZwALn2Bj511crRIqOmIvfTMTWqTtfeiKnfpkRkqkLRa1xB4tE5vIaJkYRex35ogZi9Qy1fwLMxcZtH5Mp1bUIoUlcZmryDdIUqT+F1uDl8zEvXnur/eD24465xq5lEhiZOrMcI0qE3mPfyo2kakhFYkM0oxEBnGeWqG6LKU5ERMJEYkuy0ZCxNVl8WHdyMzY/fV+MPR3hrjWVxEmSDNioaXFBGlpWWhpMUFaWv9SWuS454a41v9ZkdmWVulowE0pkvVs4ok04CSaeEEbcJJNPEVR8MkbwHgv+NHRPiUAAAAASUVORK5CYII=">
+                        <img id="bold-button" width="20" height="20" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADCklEQVR4nO2ZW4hOURTHf2YYpIlJxiW3lHhwa0SapBiXUobSNBEzJRrJw7yQy5s8y+WBFzXKyK00eJBLgyK5pqFcGpQauROS23za9T91ms7tmzlnz/nq/Gs97bX3Or/vfHuftdaGTJky9VQjgRPApZjsNNAE7AM2AVVAKRa0HsglbL8EWQ8UJwWyUcHOAQtjsJXAGqAROAhcE4gD9RiYmySICZqUBgN1wDPF+ingggNx1A/Yo3h/gBmFCuJov2LeA/piEWQAMCHEyvOIOQh4pbjLsQhyI+Lp9BtoBw4Bk0Li7tKcIzZBPsvnpR7Uy951gTIbujZgzdnya+sNkCERNnOlfmUHxu/NlMvnLSkEcatJc8wp5aVi4B/wFygixSDzNee6z3gR0CmQPqQYZJrmPPQZH63xN8SkpECWac4Fn/HakPFUgJQArZqzxcfnssY30wsg44EyHzOn0CygAXgq/w7lWV1Vr/EPeb7l2EDysRfAVI+16pQNdypLxibIYeAj8CnAzAfxCdACbAAGdlljnEqFnCC2xgkRFaSnKhNsThBBX/xUg5ik85brb2fe3JK4g9hM4yuAZr0VJ2axTRBzWtVEMPPtmAcMDYlZpRPLxD1gE8QpUfOx28DqgPSjAvgh3wW2j98zwMkAO6va5ZsL6HhAFdgonzu2QaJ+vPoD61wn1c6AtL9DPtNJaa6F9ovZ2F/00F7aGwKbChCj+5prCi4v1bj+tqkGOaq5q3zGZ8a1T5IGcSpFkyh6aaLGn5NykJuauzikCfGIFINUqi7/rl6Wl1Zo7SukEKRUXX7n+N0d4LtDPqb7aA2kNeRuxCSGr9Wocz6IxwKOXtQ2NX7VWABxKr6oZjojV9VxD+qQVLsqyRIbIOUR70bmAGMiPtQwdVByeoaC7MaPAO4q7kWbfa04tUj1vFPXj4prYRsgJvtdCpx37aMHwNg4gzggzRHuQKLYFN0Rmo28HTgFvHcBfAW2qfyNVQ3dKJq6Y+YS1GS4w0lIk5WhtsdkbWpct6gTv1YxMmXKlIlQ/QfD7r3X90BSiQAAAABJRU5ErkJggg==">
+                        <img id="delete-button" width="20" height="20" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACvUlEQVR4nM2ZSUhVcRTGP6XEoKhFCg3YolBoQGlaZC0yKCo3lYsMGlBSqIUFDRSVtkiLDAoqXKRgRZE0bAoaKDIVIxssisaNgkOUUasWVi8ufA8e8qh7Hucc7g/+m+9cv+98PL1e7gP0yABwDEA/gNh/Th+AOv5M5DgaosDIU4sI0sflFoW4tjDhk4kcMR6r692IbJE0AN0p/N5bnbZUi6QDeB6BAjGeRxqfzieaTYcfM5j5UdO0Q3BH0qKQme2apjdougZ+rGXmdU3TBppW/uOaVgBdCnqcSmYG2WocpumhFG6nUj1ONec1UGQ7Tc84FjnL+TYoUkLTq45FrnG+DoosCXEv1y7SxvliKJJH0/eORT5wngtFJtD0u2ORH5yPhzI/aZzpUCSTsyBTnV6a5zgUmcZZDwzoovkChyILOXsCA27RfLVDkWLObsKAJpqXORQp56wRBtTRfJ9Dkf2WLyd20vykQ5FTnO2AARtofsmhyGXOSmHAMprfdyjygLMiGDCH5q8dirzhbDYMyKb5F4ciXznLggHBW5VhAH8AjBYsJtVHAfgN4BczTRhk+CTBYlJ9MvUBGPKKIfmCxaR6AfWXMOQeQ5YLFpPqK6jfhSEXGbJRsJhU30T9Agw5wZBdgsWk+m7q9TBkL0OOCxaT6vXU98CQLQxpFiwm1c9T3wxDVjHktmAxqX6H+koYMo8hLwSLSfVu6nNhyFSG9AsWk+oD1KfAkAw+ogwneXzQKJKe8Bhk/tX1Ny4wMcRiUj2L2hAceMewmSEWk+qzqL2FA60MWxpiMaleRO0hHGhh2PoQi0n1UmpX4MBphlUleXue7G29RK+id5BhzkGGHTHwrqX3AThQwbBzBt6N9N4KB+KPKU8BjFH0DbyeeTyexBkH4HPCH6v2GQQw1qNIQPBG/jH/C2sVCLw6AcxPZaO/o6MLWTbPiJYAAAAASUVORK5CYII=">
                     </div>
                     <div class="memo-text-container">
-                        <div id="memo-text-enter-day">
+                        <div id="memo-text-create-day">
+
+                        </div>
+                        <div id="memo-text-title" contenteditable="true">
 
                         </div>
                         <div id="memo-text-content" placeholder="메모를 입력하세요..." contenteditable="true">
@@ -39,22 +38,5 @@
                 </div>
             </div>
         </div>
-        <script>
-            document.getElementById('new-button').addEventListener('click', () => {
-                const memoContent = document.getElementById('memo-text-content');
-                memoContent.innerText = '';
-                memoContent.ariaPlaceholder = '메모를 입력해주세요'
-                document.getElementById('memo-text-enter-day').innerText = getDate() + ' ' + getTime();
-            })
-            document.getElementById('bold-button').addEventListener('click', function () {
-                document.execCommand('bold', false, null);
-            });
-            document.getElementById('memo-text-content').addEventListener('input', function () {
-                localStorage.setItem('memo', this.innerHTML);
-            });
-
-            
-            document.getElementById('memo-text-content').innerHTML = localStorage.getItem('memo');
-        </script>
     </body>
 </html>

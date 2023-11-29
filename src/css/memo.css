@@ -28,11 +28,26 @@
     height: 90%;
     margin:5px;
 }
-#memo-text-enter-day{
+#memo-text-create-day{
     text-align: center;
     color: gray;
+}
+#memo-text-header{
+    height: 20px;
+    padding:5px
 }
 #memo-text-content{
     height: 100%;
     padding:5px
+}
+#memo-list{
+    list-style-type: none;
+}
+.memo-list-item{
+    text-overflow: ellipsis;
+    overflow:hidden;
+    padding:5px;
+}
+.memo-list-item:hover{
+    background-color: gray;
 }
