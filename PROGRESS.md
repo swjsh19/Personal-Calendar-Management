@@ -23,5 +23,5 @@
 * 정성현
   * 스프린트 페이지 기능 의논 : https://github.com/swjsh19/Personal-Calendar-Management/issues/3
   * 메인 페이지 ux 기능 의논  : https://github.com/swjsh19/Personal-Calendar-Management/issues/4
-  * 스프린트 page 구성  : https://github.com/swjsh19/Personal-Calendar-Management/blob/develop/page.html
+  * 스프린트 page 기본 구성  : https://github.com/swjsh19/Personal-Calendar-Management/pull/7
 * 이규태
