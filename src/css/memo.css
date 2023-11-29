@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    width:100vw;
+    height:100vh;
+    flex-direction: row;
+}
+.side-conatiner{
+    width:20%;
+    height: 100%;
+    border-right: 1px solid black;
+}
+.side-content{
+    margin:5px;
+}
+.memo-container{
+    width:80%;
+    height: 100%;
+}
+.memo-header{
+    padding: 5px;
+    height:20px;
+    border-bottom: 1px solid black;
+}
+.memo-text-container{
+    height: 90%;
+}
