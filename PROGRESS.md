@@ -25,3 +25,4 @@
   * 메인 페이지 ux 기능 의논  : https://github.com/swjsh19/Personal-Calendar-Management/issues/4
   * 스프린트 page 기본 구성  : https://github.com/swjsh19/Personal-Calendar-Management/pull/7
 * 이규태
+  * 달력 페이지 임시 기능 디자인
