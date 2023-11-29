@@ -1,11 +1,9 @@
-function getTime() {
+function getDate() {
     const date = new Date();
-    const minutes = date.getFullYear();
-    const hours = date.getMonth();
-    const seconds = date.getDate();
-    return `${hours}:${
-            minutes < 10 ? `0${minutes}` : minutes}:${
-                seconds < 10 ? `0${seconds}` : `${seconds}`}`
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    const toDate = date.getDate();
+    return `${year}년 ${month+1}월 ${toDate}일`
 }
 
 function getTime() {

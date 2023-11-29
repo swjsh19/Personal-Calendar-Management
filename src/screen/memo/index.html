@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../css/memo.css">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="../../js/util.js"></script>
         <title>Memo</title>
     </head>
     <body>
@@ -17,18 +19,42 @@
             <div class="memo-container">
                 <div class="memo-content">
                     <div class="memo-header">
-                        header
+                        <button id="new-button">
+                            new
+                        </button>
+                        <button id="save-button">
+                            save
+                        </button>
+                        <button id="bold-button">
+                            bold
+                        </button>
                     </div>
                     <div class="memo-text-container">
-                        <div class="memo-text-enter-day">
+                        <div id="memo-text-enter-day">
 
                         </div>
-                        <div class="memo-text-content">
-
+                        <div id="memo-text-content" placeholder="메모를 입력하세요..." contenteditable="true">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            document.getElementById('new-button').addEventListener('click', () => {
+                const memoContent = document.getElementById('memo-text-content');
+                memoContent.innerText = '';
+                memoContent.ariaPlaceholder = '메모를 입력해주세요'
+                document.getElementById('memo-text-enter-day').innerText = getDate() + ' ' + getTime();
+            })
+            document.getElementById('bold-button').addEventListener('click', function () {
+                document.execCommand('bold', false, null);
+            });
+            document.getElementById('memo-text-content').addEventListener('input', function () {
+                localStorage.setItem('memo', this.innerHTML);
+            });
+
+            
+            document.getElementById('memo-text-content').innerHTML = localStorage.getItem('memo');
+        </script>
     </body>
 </html>
