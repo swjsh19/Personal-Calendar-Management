@@ -12,8 +12,8 @@
 
 # Individual progress
 * 이호윤
-  * main page ux 구성 : https://github.com/swjsh19/Personal-Calendar-Management/pull/5
-  * memo page ux 구성 : https://github.com/swjsh19/Personal-Calendar-Management/pull/6
+  * main page ux 구성 및 임시 기능 : https://github.com/swjsh19/Personal-Calendar-Management/pull/5
+  * memo page 구성 및 임시 디자인 : https://github.com/swjsh19/Personal-Calendar-Management/pull/6
   * main page ux 의논: https://github.com/swjsh19/Personal-Calendar-Management/issues/4, https://github.com/swjsh19/Personal-Calendar-Management/issues/2
   * 스프린트 page 의논 : https://github.com/swjsh19/Personal-Calendar-Management/issues/3
 * 정성현
