@@ -1,6 +1,7 @@
 const Type = {
     Todo: 1,
-    Done: 2
+    Done: 2,
+    Pending: 3
 };
 
 const Priority = {
@@ -18,6 +19,8 @@ const Days = {
     Sat: 6,
     Sun: 7            
 };
+
+
 
 let tasks = [];
 
@@ -60,6 +63,25 @@ function addToList(task){
     }
     
 
+
+    let ClearBtn = document.querySelector("#clear-btn");
+
+    ClearBtn.addEventListener("click", () =>{
+        if(task.type === Type.Todo){
+            task.type = Type.Pending;
+            div.remove();
+            addToList(task);
+            saveTasks();
+        }
+        if(task.type === Type.Done){
+            div.remove();
+            tasks = tasks.filter(t => t !== task);
+            saveTasks();
+        }
+    });
+    
+
+
     //X - button create
     let buttonRemove = document.createElement("button");
     buttonRemove.classList.add("btn", "btn-sm", "btn-danger");
@@ -73,27 +95,29 @@ function addToList(task){
         tasks = tasks.filter(t => t !== task);
         saveTasks();
     });
+
+
     let list;
     if(task.Day === Days.Mon){
-        list = document.querySelector(task.type === Type.Todo ? "#task-list1" : "#done-list1");
+        list = document.querySelector(task.type === Type.Todo ? "#task-list1" : (task.type === Type.Done ?"#done-list1" : "#Pending-list"));
     }
     else if(task.Day === Days.Tue){
-        list = document.querySelector(task.type === Type.Todo ? "#task-list2" : "#done-list2");
+        list = document.querySelector(task.type === Type.Todo ? "#task-list2" : (task.type === Type.Done ?"#done-list2" : "#Pending-list"));
     }
     else if(task.Day === Days.Wed){
-        list = document.querySelector(task.type === Type.Todo ? "#task-list3" : "#done-list3");
+        list = document.querySelector(task.type === Type.Todo ? "#task-list3" : (task.type === Type.Done ?"#done-list3" : "#Pending-list"));
     }
     else if(task.Day === Days.Thu){
-        list = document.querySelector(task.type === Type.Todo ? "#task-list4" : "#done-list4");
+        list = document.querySelector(task.type === Type.Todo ? "#task-list4" : (task.type === Type.Done ?"#done-list4" : "#Pending-list"));
     }
     else if(task.Day === Days.Fri){
-        list = document.querySelector(task.type === Type.Todo ? "#task-list5" : "#done-list5");
+        list = document.querySelector(task.type === Type.Todo ? "#task-list5" : (task.type === Type.Done ?"#done-list5" : "#Pending-list"));
     }
     else if(task.Day === Days.Sat){
-        list = document.querySelector(task.type === Type.Todo ? "#task-list6" : "#done-list6");
+        list = document.querySelector(task.type === Type.Todo ? "#task-list6" : (task.type === Type.Done ?"#done-list6" : "#Pending-list"));
     }
     else{
-        list = document.querySelector(task.type === Type.Todo ? "#task-list7" : "#done-list7");
+        list = document.querySelector(task.type === Type.Todo ? "#task-list7" : (task.type === Type.Done ?"#done-list7" : "#Pending-list"));
     }
     list.appendChild(div);
 }
@@ -128,7 +152,7 @@ addBtn.addEventListener("click", () => {
 
     let prior_ = document.querySelector('input[name="btnradio"]:checked').value;
     let Select_Day = document.getElementById("Day").value;
-    console.log("prior_: ", prior_);
+
     // 2. Create a new Task object.
     let task = {
         text: text,
@@ -147,3 +171,18 @@ addBtn.addEventListener("click", () => {
     input.value = "";
     prior_.value = "";
 });
+
+
+
+// let ClearBtn = document.querySelector("#clear-btn");
+
+// ClearBtn.addEventListener("click", () =>{
+//     for (const taskId in tasks) {
+//         if (tasks.hasOwnProperty(taskId)) {
+//             tasks[taskId].type = Type.Pending;
+//             addToList(tasks[taskId]);
+//         }
+//     }
+//     // saveTasks();
+//     // loadTasks();
+// });
