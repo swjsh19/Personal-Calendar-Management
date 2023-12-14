@@ -1,0 +1,46 @@
+@charset "utf-8";
+.container{
+    width:100vw;
+    margin: 0 auto;
+}
+ul.tabs{
+    display: flex;
+    width:100%;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+ul.tabs li{
+    width: 100%;
+    background: none;
+    color: #222;
+    display: inline-block;
+    cursor: pointer;
+}
+
+ul.tabs li.current{
+    background: #ededed;
+    color: #222;
+}
+
+@media (max-width:99px) {
+}
+@media (min-width:100px) and (max-width:599px){
+    ul.tabs{
+        flex-direction: column;
+    }
+}
+@media (min-width:599px) {
+    ul.tabs{
+        flex-direction: row;
+    }
+    
+}
+/* landscape : 단말기 가로 방향 */
+@media screen and (orientation:landscape) {
+    
+}
+/* portrait : 단말기 세로 방향 */
+@media screen and (orientation:portrait) {
+    
+}
