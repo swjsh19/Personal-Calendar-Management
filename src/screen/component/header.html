@@ -30,25 +30,35 @@
         });
         $('.mode-btn').click(function(){
             let mode = $('html').attr("data-bs-theme");
-            if(mode == 'dark'){
-                $('html').attr("data-bs-theme", "light");
-                $(this).removeClass('btn-light');
-                $(this).addClass('btn-dark');
-                $(this).html("Dark");
-            }else{
-                $('html').attr("data-bs-theme", "dark");
-                $(this).removeClass('btn-dark');
-                $(this).addClass('btn-light');
-                $(this).html("Light");
-            } 
+            changeMode(mode);
+
+            localStorage.setItem('mode', mode);
         })
         $('#mode').click(function(e) {
-        if (e.target.checked) {
-            document.documentElement.setAttribute('color-theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('color-theme', 'light');
-        }
+            if (e.target.checked) {
+                document.documentElement.setAttribute('color-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('color-theme', 'light');
+            }
         });
+        function changeMode(mode){
+            if(mode == 'dark'){
+                $('html').attr("data-bs-theme", "light");
+                $('.mode-btn').removeClass('btn-light');
+                $('.mode-btn').addClass('btn-dark');
+                $('.mode-btn').html("Dark");
+            }else{
+                $('html').attr("data-bs-theme", "dark");
+                $('.mode-btn').removeClass('btn-dark');
+                $('.mode-btn').addClass('btn-light');
+                $('.mode-btn').html("Light");
+            } 
+        }
+        function init(){
+            let mode = localStorage.getItem('mode');
+            changeMode(mode);
+        }
+        init();
     </script>
     </body>
 </html>
