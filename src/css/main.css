@@ -19,4 +19,14 @@
     background-color: red;
     /* 수평 중앙 정렬하기 */
     margin: 0 auto;
+
+#header{
+    height: 10%;
+    width: 100%;
+}
+
+#content-container {
+    height: 90%;
+    width: 100vw;
+
 }

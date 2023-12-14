@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../css/memo.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="../../js/util.js"></script>
+        <title>Memo</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="side-conatiner">
+                <div class="d-flex flex-column flex-shrink-0 p-3">
+                    <ul id="memo-list"  class="nav nav-pills flex-column mb-auto">
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="memo-container">
+                <div class="memo-content">
+                    <div class="memo-header d-flex flex-wrap align-items-center justify-content-center justify-content-md-end py-5 mb-10 border-bottom">
+                        <svg id="new-button" class="mx-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-stickies" viewBox="0 0 16 16">
+                            <path d="M1.5 0A1.5 1.5 0 0 0 0 1.5V13a1 1 0 0 0 1 1V1.5a.5.5 0 0 1 .5-.5H14a1 1 0 0 0-1-1H1.5z"/>
+                            <path d="M3.5 2A1.5 1.5 0 0 0 2 3.5v11A1.5 1.5 0 0 0 3.5 16h6.086a1.5 1.5 0 0 0 1.06-.44l4.915-4.914A1.5 1.5 0 0 0 16 9.586V3.5A1.5 1.5 0 0 0 14.5 2h-11zM3 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .5.5V9h-4.5A1.5 1.5 0 0 0 9 10.5V15H3.5a.5.5 0 0 1-.5-.5v-11zm7 11.293V10.5a.5.5 0 0 1 .5-.5h4.293L10 14.793z"/>
+                          </svg>
+                        <svg id="save-button" class="mx-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
+                            <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/>
+                        </svg>
+                        <svg id="is-bold" class="bold-button mx-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bootstrap" viewBox="0 0 16 16">
+                            <path d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377H6.375z"/>
+                            <path d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H4z"/>
+                        </svg>
+                        <svg id="is-not-bold" class="bold-button mx-3" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bootstrap-fill" viewBox="0 0 16 16">
+                            <path d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z"/>
+                            <path d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396H5.062z"/>
+                        </svg>
+                        <svg id="delete-button" class="mx-3" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                        </svg>
+                    </div>
+                    <div class="memo-text-container">
+                        <div id="memo-text-create-day">
+
+                        </div>
+                        <div id="memo-text-title" contenteditable="true">
+
+                        </div>
+                        <div id="memo-text-content" placeholder="메모를 입력하세요..." contenteditable="true">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById('new-button').addEventListener('click', () => {
+                newMemo();
+            })
+            document.getElementById('save-button').addEventListener('click', () => {
+                saveMemoToList();
+            });
+
+            $('.memu').click(function(){
+                var tab_id = $(this).attr('data-tab');
+                $('#content-container').load('../' + tab_id +'/index.html')
+            });
+            $('.bold-button').click(function(){
+                restoreSel();
+                var isBold = document.getElementById("is-bold");
+                var isNotBold = document.getElementById("is-not-bold");
+                if($(this)[0].id == "is-bold"){
+                    isBold.style.display = "none";
+                    isNotBold.style.display = "block";
+                }
+                else{
+                    isBold.style.display = "block";
+                    isNotBold.style.display = "none";
+                }
+                document.execCommand('Bold', false, null);
+            });
+            $("#memo-text-content").focusout(function () {
+                saveSel();
+            });
+            document.getElementById('delete-button').addEventListener('click', () => {
+                deleteSelectedMemo();
+            });
+
+            function init(){
+                newMemo();
+            }
+
+            var savedList = JSON.parse(localStorage.getItem('memoList')) || [];
+            var currentMemoKey = "memoKey";
+            var memoListItemKeyIndex = savedList.length > 0 ? `${savedList[savedList.length-1].key}`.replace(currentMemoKey, '') : 0;
+            var memoList = document.getElementById('memo-list');
+            var selectedMemoKey = null;
+            var savedRange = null;
+
+            savedList.forEach(function (item) {
+                addListItem(item);
+            });
+
+            function newMemo(){
+                selectedMemoKey = null;
+                const memoContent = document.getElementById('memo-text-content');
+                const memoTitle = document.getElementById('memo-text-title');
+                memoContent.innerText = '';
+                memoContent.ariaPlaceholder = '메모를 입력해주세요'
+                memoTitle.innerText = '';
+                document.getElementById('memo-text-create-day').innerText = getDate() + ' ' + getTime();
+            }
+
+            function saveMemoToList() {
+                var memoTitle = document.getElementById('memo-text-title').innerHTML.trim();
+                var memoContent = document.getElementById('memo-text-content').innerHTML.trim();
+                var createDateTime = document.getElementById('memo-text-create-day').innerHTML.trim();
+
+                var selectedMemo = savedList.find(function (item) {
+                    return item.key === selectedMemoKey;
+                });
+                if (memoContent !== '') {
+                    if (selectedMemo) {
+
+                        const cleanList = savedList.filter(function(item){
+                            return item.key !== selectedMemo.key;
+                        });
+
+                        var listItem = {
+                            key: selectedMemo.key,
+                            title: memoTitle,
+                            content: memoContent,
+                            createDateTime: selectedMemo.createDateTime,
+                            enterDateTime: new Date().toLocaleString()
+                        };
+                        cleanList.push(listItem);
+                        memoList.innerHTML = '';
+                        savedList = cleanList;
+                        savedList.forEach(function (item) {
+                            addListItem(item);
+                        });
+                    }
+                    else{
+                        var listItem = {
+                            key: currentMemoKey + ++memoListItemKeyIndex,
+                            title: memoTitle,
+                            content: memoContent,
+                            createDateTime: createDateTime,
+                            enterDateTime: new Date().toLocaleString()
+                        };
+                        selectedMemoKey = listItem.key;
+                        addListItem(listItem);
+                        savedList.push(listItem);
+                    }
+
+                    localStorage.setItem('memo', '');
+                    localStorage.setItem('memoList', JSON.stringify(savedList));
+
+                    alert('메모가 저장되었습니다.');
+                } else {
+                    alert('메모를 입력하세요.');
+                }
+            }
+
+            function loadMemo(item) {
+                document.getElementById('memo-text-title').innerHTML = item.title;
+                document.getElementById('memo-text-content').innerHTML = item.content;
+                document.getElementById('memo-text-create-day').innerHTML = item.createDateTime;
+            }
+
+            function addListItem(item) {
+                var listItem = document.createElement('li');
+                var aItem = document.createElement('a');
+                aItem.className = "nav-link";
+                aItem.style.textOverflow="ellipsis";
+                aItem.href = "#";
+                listItem.className = "nav-item";
+                listItem.style.width = "100%"
+                listItem.appendChild(aItem);
+                var memoListTitle = item.title ? item.title : item.content;
+                aItem.textContent = memoListTitle;
+
+                aItem.addEventListener('click', function () {
+                    loadMemo(item);
+                    selectedMemoKey = item.key;
+                });
+
+                memoList.appendChild(listItem);
+            }
+
+            function deleteSelectedMemo() {
+                if (selectedMemoKey) {
+                    var selectedMemo = savedList.find(function (item) {
+                        return item.key === selectedMemoKey;
+                    });
+
+                    if (selectedMemo) {
+                        const cleanList = savedList.filter(function(item){
+                            return item.key !== selectedMemo.key;
+                        });
+                        memoList.innerHTML = '';
+                        savedList = cleanList;
+                        savedList.forEach(function (item) {
+                            addListItem(item);
+                        });
+                        localStorage.setItem('memo', '');
+                        localStorage.setItem('memoList', JSON.stringify(savedList));
+                        newMemo();
+                        alert("삭제하였습니다.")
+                    }
+                }
+            }
+            function saveSel() {
+                if (window.getSelection)//non IE Browsers
+                {
+                    savedRange = window.getSelection().getRangeAt(0);
+                }
+                else if (document.selection)//IE
+                {
+                    savedRange = document.selection.createRange();
+                }
+            }
+
+            //to restore sel
+            function restoreSel() {
+                $('#memo-text-content').focus();
+                if (savedRange != null) {
+                    if (window.getSelection)//non IE and there is already a selection
+                    {
+                        var s = window.getSelection();
+                        if (s.rangeCount > 0)
+                            s.removeAllRanges();
+                        s.addRange(savedRange);
+                    }
+                    else if (document.createRange)//non IE and no selection
+                    {
+                        window.getSelection().addRange(savedRange);
+                    }
+                    else if (document.selection)//IE
+                    {
+                        savedRange.select();
+                    }
+                }
+            }
+
+            init();
+        </script>
+    </body>
+</html>

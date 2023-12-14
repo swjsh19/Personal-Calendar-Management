@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <title>Header</title>
+    </head>
+    <body>
+        <header style="height: 100%;" class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-around py-3 border-bottom">
+            <h3>KW</h3>
+      
+            <ul class="tabs nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="memu px-2 link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" data-tab="home">Home</a></li>
+                <li><a href="#" class="memu px-2 link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" data-tab="schedule">Schedule</a></li>
+                <li><a href="#" class="memu px-2 link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" data-tab="">Sprint</a></li>
+                <li><a href="#" class="memu px-2 link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover" data-tab="memo">Memo</a></li>
+            </ul>
+            <div class="mode">
+                <button type="button" class="btn mode-btn btn-dark">Dark</button>
+            </div>
+          </header>
+    <script>
+        $('.memu').click(function(){
+            var tab_id = $(this).attr('data-tab');
+            $('#content-container').load('../' + tab_id +'/index.html')
+        });
+        $('.mode-btn').click(function(){
+            let mode = $('html').attr("data-bs-theme");
+            changeMode(mode);
+
+            localStorage.setItem('mode', mode);
+        })
+        $('#mode').click(function(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('color-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('color-theme', 'light');
+            }
+        });
+        function changeMode(mode){
+            if(mode == 'dark'){
+                $('html').attr("data-bs-theme", "light");
+                $('.mode-btn').removeClass('btn-light');
+                $('.mode-btn').addClass('btn-dark');
+                $('.mode-btn').html("Dark");
+            }else{
+                $('html').attr("data-bs-theme", "dark");
+                $('.mode-btn').removeClass('btn-dark');
+                $('.mode-btn').addClass('btn-light');
+                $('.mode-btn').html("Light");
+            } 
+        }
+        function init(){
+            let mode = localStorage.getItem('mode');
+            changeMode(mode);
+        }
+        init();
+    </script>
+    </body>
+</html>
