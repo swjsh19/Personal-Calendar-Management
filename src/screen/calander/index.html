@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 문서 제목 -->
+  <title>달력</title>
+  
+  <!-- 외부 스타일시트 링크 -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 이전 달로 이동하는 버튼 -->
+  <button class="nav-btn" onclick="changeMonth(-1)">이전 달</button>
+  
+  <!-- 달력 정보 표시 -->
+  <div id="calendar-info"></div>
+  
+  <!-- 달력 표시 컨테이너 -->
+  <div id="calendar-container"></div>
+  
+  <!-- 다음 달로 이동하는 버튼 -->
+  <button class="nav-btn next-month" onclick="changeMonth(1)">다음 달</button>
+  
+  <!-- 외부 스크립트 링크 -->
+  <script src="script.js"></script>
+
+</body>
+</html>
