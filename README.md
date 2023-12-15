@@ -12,6 +12,10 @@
 <img width="1470" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/ed83ea84-051e-45e3-87f6-c676ae04f491">
 
 
+# project 시작 방법
+python3 -m http.server 8080;
+(github io를 이용해 계시하려했지만 owner가 하지 못함)
+
 # Title 
 ### 개인일정관리
 
