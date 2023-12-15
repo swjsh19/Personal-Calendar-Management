@@ -1,6 +1,17 @@
 # Personal calendar management
 ### 14조
 
+# project screen
+<img width="1469" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/863428f4-6026-4056-b64a-ea8abc88d836">
+<img width="1465" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/9f231c1d-2e44-43d7-bbd6-16d6fe139c9f">
+<img width="1470" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/cbebb8e5-95e4-4ad4-ab12-c2b24570d867">
+<img width="1470" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/c6fb5f2e-f52f-496a-b401-bcbb309f97b6">
+<img width="1470" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/f9bc4fff-5228-42d8-817f-12222662e528">
+<img width="1468" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/13d76867-7208-4ede-9f5b-b82a93cdeabd">
+<img width="1468" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/1de602bc-2612-411e-ad99-b925139afb6f">
+<img width="1470" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/ed83ea84-051e-45e3-87f6-c676ae04f491">
+
+
 # Title 
 ### 개인일정관리
 
