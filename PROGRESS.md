@@ -1,4 +1,4 @@
-# Progress Report for Team 14#
+<img width="1470" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/83f8d219-623c-40e6-b280-9d23a2320a56"># Progress Report for Team 14#
 # Project Summary
 * 메인 페이지 구성
 * 메모 페이지 구성
@@ -12,6 +12,10 @@
 
 # Project Screenshot
 <img width="760" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/1d264c8d-d517-41d2-a6b5-57f514d18613">
+<img width="1470" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/5d05ac80-4701-4703-8ba7-e4f955bf92bc">
+<img width="1470" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/ccdc606a-d348-41f2-ac65-8d4c2db7b2a3">
+<img width="1469" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/147f7e56-4af0-4b2b-afcb-883cec8ede2a">
+<img width="1470" alt="image" src="https://github.com/swjsh19/Personal-Calendar-Management/assets/68680118/97a77d73-406d-4972-b9c0-7317a536b8ea">
 
 ![Alt text](image.png)
 # Individual progress
