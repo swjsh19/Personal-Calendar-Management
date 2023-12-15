@@ -19,6 +19,7 @@
     background-color: red;
     /* 수평 중앙 정렬하기 */
     margin: 0 auto;
+}
 
 #header{
     height: 10%;
